@@ -5,7 +5,12 @@
 </head>
 <body>
   <p><b>トップページ</b></p>
-  <p><a href="{% url 'signin:index' %}">サインイン</a></p>
-  <p><a href="{% url 'signin:signup' %}">サインアップ</a></p>
+  {% if user.is_authenticated %}
+  <p>{{ user.get_username }}さん、ようこそ。</p>
+  <p><a href="{% url 'signin:logout' %}"><button type="button">ログアウト</button></a></p>
+  {% else %}
+  <p><a href="{% url 'signin:login' %}">ログイン</a></p>
+  <p><a href="{% url 'signin:signup' %}">新規登録</a></p>
+  {% endif %}
 </body>
 </html>

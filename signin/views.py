@@ -1,13 +1,8 @@
-from django.views.generic import TemplateView
 from django.contrib.auth import login
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from .forms import SignUpForm
-
-# https://qiita.com/dai-takahashi/items/7d0187485cad4418c073
-class Index(TemplateView):
-    template_name = "signin/index.html"
 
 # https://qiita.com/hayata-yamamoto/items/00072091caa5921fc819
 class SignUp(CreateView):
