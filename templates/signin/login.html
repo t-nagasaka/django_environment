@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>テストアプリ</title>
+</head>
+<body>
+  <p><b>サインイン</b></p>
+  <p><form action="{% url 'signin:login' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn">ログイン</button>
+    </form></p>
+  <p><a href="{% url 'about:index' %}">ホームに戻る</a></p>
+</body>
+</html>
